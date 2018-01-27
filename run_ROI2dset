@@ -1,0 +1,15 @@
+# ROI2dataset
+
+ROI2dataset -prefix rh    \
+            -keep_separate    \
+            -nodelist rh      \
+            -nodelist_with_ROIval     \
+            -of 1D          \
+            -input rh.niml.roi
+
+ROI2dataset -prefix lh    \
+            -keep_separate    \
+            -nodelist lh      \
+            -nodelist_with_ROIval     \
+            -of 1D          \
+            -input lh.niml.roi

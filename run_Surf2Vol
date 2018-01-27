@@ -1,0 +1,28 @@
+# 3dSurf2Vol
+
+set rois = (`count 1 5 -digits 3`)
+
+foreach roi ($rois)
+
+    3dSurf2Vol -spec /home/lin/文档/weiru/SUMA/SongYJ_both.spec  \
+           -surf_A /home/lin/文档/weiru/SUMA/rh.smoothwm.asc   \
+           -surf_B /home/lin/文档/weiru/SUMA/rh.pial.asc       \
+           -sv ../SurfVol_Alnd_Exp+orig                                      \
+           -grid_parent ../stats.exp_REML+orig                               \
+           -map_func mode                                                  \
+           -f_steps 10                                                    \
+           -sdata_1D rh.$roi.1D                                            \
+           -prefix rh.$roi
+end
+
+foreach roi ($rois)
+    3dSurf2Vol -spec /home/lin/文档/weiru/SUMA/SongYJ_both.spec  \
+           -surf_A /home/lin/文档/weiru/SUMA/lh.smoothwm.asc   \
+           -surf_B /home/lin/文档/weiru/SUMA/lh.pial.asc       \
+           -sv ../SurfVol_Alnd_Exp+orig                                      \
+           -grid_parent ../stats.exp_REML+orig                               \
+           -map_func mode                                                  \
+           -f_steps 10                                                    \
+           -sdata_1D lh.$roi.1D                                            \
+           -prefix lh.$roi
+end

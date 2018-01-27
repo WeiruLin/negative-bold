@@ -1,0 +1,11 @@
+# 3dmaskdump
+
+set rois = (`count 1 5 -digits 3`)
+
+foreach roi ($rois)
+    3dmaskdump -nozero -o rh.$roi.txt rh.$roi+orig
+end
+
+foreach roi ($rois)
+    3dmaskdump -nozero -o lh.$roi.txt lh.$roi+orig
+end
